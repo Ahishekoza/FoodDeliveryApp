@@ -1,0 +1,56 @@
+Packages
+animatable : npm i react-native-animatable
+hericons :npm i react-native-heroicons
+swiper : npm i react-native-swiper
+
+
+
+props:
+onFocus
+secureTextEntry
+contentContainerStyle
+swiper=(showsButtons,autoplay,autoplayduration,dotColor,activedotColor,nextButton,previousButton)
+
+
+Backend :
+firebase : 
+firestore is used to store the data
+storage is used to store the image which can be accessed via provided URL
+onAuthStateChanged : Firebase Authentication that allows you to set up an observer to watch for changes in the user's authentication state.
+
+firebase.auth.createUserWithEmailAndPassword
+
+
+usage,
+secureTextEntry and eye,eyesplashIcon : depends on state of boolean variable showPassword 
+The purpose of contentContainerStyle is to define the styling 
+(usually in the form of CSS properties) 
+for the container that holds the content within a specific UI component. 
+This can include containers for lists, scrollable views, modal pop-ups, or any other UI element that contains content.
+
+
+error while installing firebase in react-native
+check the package name present in your manifest file and in the firebase
+
+error while intializing firebase in react-native
+
+
+Add To Cart Functionality
+We will add the Item selected by the loggedIn user to the cart using user's loggedIn user Id
+
+The purpose of arrayUnion is to update an array field
+within a Firestore document by adding selectedFoodItem to the array 
+if it doesn't already exist in it.
+If the element is already present in the array, it won't create a duplicate; Firestore will ensure that the array contains only unique elements.
+
+
+
+TextInput in react-native expects only string value *IMP*
+onSnapshot: -- is used for listening to the data changes in real time
+ userCartRef.onSnapshot((doc) => {
+        if (doc.exists) {
+          setCart(doc.data().Cart);
+        } else {
+          setCart([]); // Handle the scenario where the document doesn't exist
+        }
+      });
